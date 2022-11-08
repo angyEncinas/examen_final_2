@@ -1,15 +1,29 @@
 <html>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" id="sumar-button" />
-    </form>
-    <div id="resultado-div"></div>
+    <h1>Tareas</h1>
+
+    <h2>Añadir</h2>
+      <form id="crear-form">
+        <label>Materia:</label>
+        <select id="materias-items">
+            <option value="Fisica">Fisica</option>
+            <option value="Calculo">Calculo</option>
+            <option value="Programacion">Programacion</option>
+            <option value="Cristologia">Cristologia</option>
+            <option value="Ingles">Ingles</option>
+        </select>
+        <br></br>
+        <label for="tarea-item">Tarea:</label>
+        <input type="string" id="tarea-item" />
+        <br></br>
+        <label for="fecha-item">Fecha:</label>
+        <input type="string" id="fecha-item" />
+        <br></br>
+        <input type="submit" value="Crear" id="crear-button" />
+      </form>
+      <div id="vista-div"></div>
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
+
