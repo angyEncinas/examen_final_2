@@ -1,6 +1,7 @@
-import {crearTarea, obtenerListaTareas, limpiarListaTareas} from "./docente.js";
+import {crearTarea, obtenerListaTareas, limpiarListaTareas,
+        eliminarTarea} from "./docente.js";
 
-describe("TAREA", () => {
+describe("C R E A R     T A R E A S", () => {
     beforeEach(() => {
         limpiarListaTareas();
     });
@@ -27,4 +28,23 @@ describe("TAREA", () => {
     }]
         expect(obtenerListaTareas()).toEqual(listaEsperada);
     });
+});
+
+describe("E L I M I N A R       T A R E A S", () => {
+    beforeEach(() => {
+        limpiarListaTareas();
+    });
+    it("Borra la tarea asignada cuando la lista tiene 1 solo elemento", () => {
+        crearTarea("Calculo I", "Ecuaciones cubicas", "09/11/2022")
+        let bandera = obtenerListaTareas();
+        expect(eliminarTarea()).toEqual(0);
+    });
+});
+
+describe("C R E A R     M A T E R I A S", () => {
+
+});
+
+describe("E L I M I N A R       M A T E R I A S", () => {
+
 });
