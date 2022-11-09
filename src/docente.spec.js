@@ -36,8 +36,7 @@ describe("E L I M I N A R       T A R E A S", () => {
     });
     it("Borra la tarea asignada cuando la lista tiene 1 solo elemento", () => {
         crearTarea("Calculo I", "Ecuaciones cubicas", "09/11/2022")
-        let bandera = obtenerListaTareas();
-        expect(eliminarTarea()).toEqual(0);
+        expect(eliminarTarea("Calculo I")).toEqual(0);
     });
 });
 

@@ -18,9 +18,14 @@
     function limpiarListaTareas() {
         listaTareas = [];
     }
-    
-    function eliminarTarea() {
-        return 0;
+
+    function eliminarTarea(name) {
+        if(listaTareas.length > 0) {
+            if(listaTareas[0].nameMatchs(name)) {
+                listaTareas.pop();
+            }
+        }
+        return listaTareas.length;
     }
 
     export {crearTarea, obtenerListaTareas, limpiarListaTareas, eliminarTarea}
