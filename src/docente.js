@@ -1,12 +1,24 @@
+let listaTareas = [];
+
 function crearTarea(nombreMateria,nombreTarea,fechaInicio,fechaFin)
 {
     let tarea = {
         nombreMateria: nombreMateria,
         nombreTarea: nombreTarea,
         fechaInicio: fechaInicio,
-        fechaFin: fechaFin
+        fechaFin: fechaFin,
     }
-    return tarea
+    listaTareas.push(tarea);
+    return tarea;
 }
 
-export {crearTarea}
+function obtenerListaTareas()
+{
+    return listaTareas;
+}
+function limpiarListaTareas()
+{
+    listaTareas = [];
+}
+
+export {crearTarea, obtenerListaTareas, limpiarListaTareas}
