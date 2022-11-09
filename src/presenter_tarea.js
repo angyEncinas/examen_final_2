@@ -1,6 +1,4 @@
-//import sumar from "./sumador";
-
-const materias = document.querySelector("#materias-items");
+const materia = document.querySelector("#materia-items");
 const tarea = document.querySelector("#tarea-item");
 const fecha = document.querySelector("#fecha-item");
 
@@ -13,13 +11,13 @@ const mensaje = "Tarea creada con exito !!!";
 crear.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const MateriasList = materias.value;
-  const Tarea_Text = tarea.value;
-  const Fecha_Text = fecha.value;
+  const MateriaList = materia.value;
+  const TareaText = tarea.value;
+  const FechaText = fecha.value;
 
   vista.innerHTML = "<p>" + mensaje + "<p>" +
-                    "<p> Materia:" + MateriasList + "<p>" +
-                    "<p> Tarea:" + Tarea_Text + "<p>" +
-                    "<p> Fecha:"+ Fecha_Text + "<p>" +
+                    "<p> Materia: " + MateriaList + "<p>" +
+                    "<p> Tarea: " + TareaText + "<p>" +
+                    "<p> Fecha: "+ FechaText + "<p>" +
                     "</p>";
 });

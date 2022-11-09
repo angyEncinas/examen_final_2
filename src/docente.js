@@ -1,12 +1,11 @@
 let listaTareas = [];
 
-function crearTarea(nombreMateria,nombreTarea,fechaInicio,fechaFin)
+function crearTarea(nombreMateria,nombreTarea,fecha)
 {
     let tarea = {
         nombreMateria: nombreMateria,
         nombreTarea: nombreTarea,
-        fechaInicio: fechaInicio,
-        fechaFin: fechaFin,
+        fecha: fecha,
     }
     listaTareas.push(tarea);
     return tarea;
