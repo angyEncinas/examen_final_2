@@ -5,26 +5,34 @@
     </h1>
 
     <h2>Añadir</h2>
-      <form id="crear-form">
-        <label>Materia:</label>
-        <select id="materia-items">
-            <option value="Fisica I">Fisica I</option>
-            <option value="Calculo I">Calculo I</option>
-            <option value="Programacion">Programacion</option>
-            <option value="Cristologia">Cristologia</option>
-            <option value="Ingles V">Ingles V</option>
-        </select>
-        <br></br>
-        <label for="tarea-item">Tarea:</label>
-        <input type="string" class="noNumberField" id="tarea-item" />
-        <br></br>
-        <label for="fecha-item">Fecha:</label>
-        <input type="datetime-local" id="fecha-item" />
-        <br></br>
-        <input type="submit" value="Crear" id="crear-button" />
-      </form>
-      <div id="vista-div"></div>
+    <form>
+      <div class="formBox">
+          <label for="title">tarea</label>
+          <input type="text" id="title" placeholder="Title"/>
+      </div>
+      
+      <div class="formBox">
+          <label for="description">descripcion</label>
+          <input type="text" id="description" placeholder="detalle"/>
+      </div>
+      <div class="formBox">
+          <label for="subject">materia</label>
+          <input type="text" id="subject" placeholder="materia"/>
+      </div>
 
+      <div class="formBox">
+          <label for="date">fecha</label>
+          <input type="text" id="date" placeholder="fecha"/>
+      </div>
+
+      <div class="formBox">
+          <button id="btn">Click to Add</button>
+      </div>
+
+  </form>
+  <div id="msg">
+    <pre></pre>
+  </div>
     <script type="module" src="./src/presenter_tarea.js"></script>
   </body>
 </html>

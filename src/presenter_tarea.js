@@ -1,38 +1,30 @@
-// V I S T A  D E   T A R E A S \\
-const materia = document.querySelector("#materia-items");
-const tarea = document.querySelector("#tarea-item");
-const fecha = document.querySelector("#fecha-item");
-const noEnteros = document.querySelectorAll(".noNumberField")
 
-const crear = document.querySelector("#crear-form");
+        let tareas = [];
+        // example {id:1592304983049, title: 'Deadpool', year: 2015}
+        const addHomework = (ev)=>{
+            ev.preventDefault();  //to stop the form submitting
 
-const vista = document.querySelector("#vista-div");
+            let tarea = {
+                id: Date.now(),
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                subject: document.getElementById('subject').value,
+                date: document.getElementById('date').value
 
-crear.addEventListener("submit", (event) => {
-  event.preventDefault();
+            }
+            tareas.push(tarea);
 
-  const MateriaList = materia.value;
-  const TareaText = tarea.value;
-  const FechaText = fecha.value;
+            document.forms[0].reset(); // to clear the form for the next entries
+            //document.querySelector('form').reset();
 
-  //Mensaje
-  alert("Tarea creada con exito!.")
+            //for display purposes only
+            console.warn('added' , {tareas} );
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(tareas, '\t', 2);
 
-  vista.innerHTML = "<p> Materia: " + MateriaList + "<p>" +
-                    "<p> Tarea: " + TareaText + "<p>" +
-                    "<p> Fecha: "+ FechaText + "<p>" +
-                    "</p>";
-});
-
-// Se prohibe numeros enteros en los campos \\
-noEnteros.forEach(noNumberField=>
-  {
-    noNumberField.addEventListener("input", (event) => {
-      event.preventDefault();
-      let currentLength = String(noNumberField.value).length-1
-      if (isNaN(noNumberField.value[currentLength]) == false)
-      {
-        noNumberField.value = noNumberField.value.slice(0, currentLength-1)
-      }
-    });
-  })
+            //saving to localStorage
+            localStorage.setItem('taeasList', JSON.stringify(tareas) );
+        }
+        document.addEventListener('DOMContentLoaded', ()=>{
+            document.getElementById('btn').addEventListener('click', addHomework);
+        });
