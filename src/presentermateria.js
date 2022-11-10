@@ -11,7 +11,7 @@ const mensaje = "creada con exito !!!";
 
 
 crear.addEventListener("submit", (event) => {
-  event.preventDefault();s
+  event.preventDefault();
   
   const materia_nombre = materia.value;
   const descripcion_text = descripcion.value;
