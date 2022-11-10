@@ -2,9 +2,9 @@
   "name": "parcel-jest-base",
   "version": "1.0.0",
   "description": "",
-  "default": "index.html",
+  "default": "materia.html",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel materia.html",
     "build": "parcel build index.html",
     "test": "jest --watch",
     "test-once": "jest --verbose --coverage",
