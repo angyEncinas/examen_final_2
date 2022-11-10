@@ -21,9 +21,6 @@ crear.addEventListener("submit", (event) => {
   materia.crearMateria(materia_nombre,descripcion_text,docente_text);
   listaMat.push(materia);
   vista.innerHTML = "<p>" + mensaje + "<p>" +
-                    "<p> Materia:" + materia.obtenerNombre() + "<p>" +
-                    "<p> Tarea:" + materia.obtenerDescripcion() + "<p>" +
-                    "<p> Fecha:"+ materia.obtenerDocente() + "<p>" +
                     "</p>";
 
   let listaParaMostrar = "";
