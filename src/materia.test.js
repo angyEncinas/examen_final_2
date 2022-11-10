@@ -29,4 +29,8 @@ describe("ELIMINAR MATERIA", () => {
         materia.eliminarMateria();
         expect(materia.obtenerDescripcion()).toEqual("");
     });
+    it("Deberia eliminar  el nombre del docente encargado de la materia", () => {
+        materia.eliminarMateria();
+        expect(materia.obtenerDocente()).toEqual("");
+    });
 });

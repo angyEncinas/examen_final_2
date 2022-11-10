@@ -28,8 +28,10 @@ class Materia {
 
     }
     eliminarMateria(){
+        //Esto es importante ya que al momento de tener una lista de docentes no se podra eliminar de una
         this.nombreMateria = "";
         this.descripcion = "";
+        this.docente = "";
     }
 }
 
