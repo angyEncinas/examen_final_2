@@ -9,8 +9,8 @@ const crear = document.querySelector("#crear-form");
 const vista = document.querySelector("#vista-div");
 
 const mensaje = "creada con exito !!!";
-
-
+const listaMaterias = document.querySelector("#lista-materias-div");
+let listaMat = []
 
 crear.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -19,9 +19,17 @@ crear.addEventListener("submit", (event) => {
   const descripcion_text = descripcion.value;
   const docente_text = docente.value;
   materia.crearMateria(materia_nombre,descripcion_text,docente_text);
+  listaMat.push(materia);
   vista.innerHTML = "<p>" + mensaje + "<p>" +
                     "<p> Materia:" + materia.obtenerNombre() + "<p>" +
                     "<p> Tarea:" + materia.obtenerDescripcion() + "<p>" +
                     "<p> Fecha:"+ materia.obtenerDocente() + "<p>" +
                     "</p>";
+
+  let listaParaMostrar = "";
+  for(i=0;i<listaMat.length;i++){
+    listaParaMostrar = listaParaMostrar + listaMat[i].obtenerTodosLosDatos(); 
+  }
+  listaMaterias.innerHTML = listaParaMostrar;
+                    
 });

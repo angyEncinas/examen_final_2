@@ -15,4 +15,8 @@ describe("CREAR MATERIA", () => {
         materia.crearMateria("LEN-5 Ingles V","Aprende ingles", "Susan");
         expect(materia.obtenerDocente()).toEqual("Susan");
     });
+    it("Deberia mostrar todos los datos de la materia en un formato", () => {
+        materia.crearMateria("LEN-5 Ingles V","Aprende ingles", "Susan");
+        expect(materia. obtenerTodosLosDatos()).toEqual("<p> Materia:LEN-5 Ingles V<p><p> Tarea:Aprende ingles<p><p> Fecha:Susan<p></p>");
+    });
 });

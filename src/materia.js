@@ -18,6 +18,14 @@ class Materia {
     obtenerDocente(){
         return this.docente;
     }
+    obtenerTodosLosDatos(){
+        let cadenaDatos = "<p> Materia:" + this.obtenerNombre() + "<p>" +
+                    "<p> Tarea:" + this.obtenerDescripcion() + "<p>" +
+                    "<p> Fecha:"+ this.obtenerDocente() + "<p>" +
+                    "</p>";
+        return cadenaDatos;
+
+    }
 }
 
 export default Materia;
