@@ -12,8 +12,12 @@ let tarea = new Tareas()
 registerButton.addEventListener("click", (event) => {
     event.preventDefault();
     
-    let mensaje = tarea.crear(title, desc, sub, date);
-    divConfirmacion.innerHTML = "<p>"+mensaje+"</p>"
+    tarea.crear(title, desc, sub, date);
+    divConfirmacion.innerHTML = "<p>"+title.value+"</p>"+
+            "<p>"+desc.value+"</p>"+
+            "<p>"+sub.value+"</p>"+
+            "<p>"+date.value+"</p>";
+
 });
   
 
