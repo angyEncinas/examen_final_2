@@ -25,5 +25,8 @@ describe("ELIMINAR MATERIA", () => {
         materia.eliminarMateria();
         expect(materia.obtenerNombre()).toEqual("");
     });
-    
+    it("Deberia eliminar la descripcion de la materia", () => {
+        materia.eliminarMateria();
+        expect(materia.obtenerDescripcion()).toEqual("");
+    });
 });

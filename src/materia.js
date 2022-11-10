@@ -29,6 +29,7 @@ class Materia {
     }
     eliminarMateria(){
         this.nombreMateria = "";
+        this.descripcion = "";
     }
 }
 
