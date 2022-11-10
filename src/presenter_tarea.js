@@ -1,4 +1,6 @@
 import Tarea from "./tarea.js"
+import Tareas from "./tareas.js"
+
 
 const title = document.querySelector("#title");
 const desc = document.querySelector("#description");
@@ -6,17 +8,19 @@ const sub = document.querySelector("#subject");
 const date = document.querySelector("#date");
 const registerButton = document.querySelector("#btn");
 let divConfirmacion = document.querySelector("#msg");
+let divGuardado = document.querySelector("#msgSave");
 
-
+let listaTareas = new Tareas();
 
 registerButton.addEventListener("click", (event) => {
     event.preventDefault();
-    
+
     let tarea = new Tarea();
     tarea.crear(title.value, desc.value, sub.value, date.value);
-    let mensaje = tarea.mostrar()
+    let mensaje = tarea.mostrar();
+    let mensaje2 = listaTareas.guardar(tarea);
     divConfirmacion.innerHTML = "<p>"+mensaje+"</p>";
-
+    divGuardado.innerHTML = "<p>"+mensaje2+"</p>";
 });
   
 

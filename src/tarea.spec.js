@@ -2,8 +2,6 @@ import Tarea from "./tarea.js"
 import Tareas from "./tareas.js"
 
 
-
-
 describe("Crear una tarea", () => {
     let tareas = new Tarea;
     it("Creara una tarea con detalles simples", () => {
@@ -19,7 +17,7 @@ describe("Crear una tarea", () => {
 
 describe("Guardar tareas", () => {
     let listaTareas = new Tareas();
-    let tarea = new Tarea()
+    let tarea = new Tarea();
     it("Crear una tarea", () => {
         expect(tarea.crear('diagramas', 'detalles', 'sis info', '05/2022')).toEqual("tareaCreada");
     });
