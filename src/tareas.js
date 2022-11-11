@@ -7,7 +7,7 @@ class Tareas{
 
     guardar(tarea){
         this.listaTareas.push(tarea);
-        return "tareaGuardada";
+        return "Tarea Guardada";
     }
 
 }
