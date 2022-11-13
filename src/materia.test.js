@@ -20,6 +20,7 @@ describe("CREAR MATERIA", () => {
         expect(materia. obtenerTodosLosDatos()).toEqual("<p> Materia:LEN-5 Ingles V<p><p> Tarea:Aprende ingles<p><p> Fecha:Susan<p></p>");
     });
 });
+
 describe("ELIMINAR MATERIA", () => {
     it("Deberia vaciar el nombre de la materia", () => {
         materia.eliminarMateria();

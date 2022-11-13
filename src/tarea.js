@@ -15,7 +15,7 @@ class Tarea{
         this.descripcion = desc;
         this.materia = mat;
         this.fecha = date;
-        return alert("Creada con exito!.");
+        return "Creada con exito!.";
     }
 }
 
