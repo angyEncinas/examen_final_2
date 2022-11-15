@@ -20,3 +20,4 @@ class Tarea{
 }
 
 export default Tarea
+
