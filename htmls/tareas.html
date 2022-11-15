@@ -2,48 +2,36 @@
   <body>
     <title>Vista #1</title>
     <h1><mark>TAREA</mark></h1>
-    <form>
-      <div class="formBox">
+    <form id  = "formBox">
           <label for="title">tarea</label>
           <input type="text" id="title" placeholder="Title"/>
-      </div>
       <br>
-      <div class="formBox">
           <label for="description">descripcion</label>
           <input type="text" id="description" placeholder="detalle"/>
-      </div>
       <br>
-      <div class="formBox">
           <label for="subject">materia</label>
-          <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
+          <select name="sunject" id="subject">
+            <option value="IngSoft">Ing Software</option>
+            <option value="Ingles">Ingles</option>
+            <option value="Calculo1">Calculo1</option>
+            <option value="Calculo2">Calculo2</option>
           </select>
           <br><br>
           <div> no ves al materia de la que eres docente? <a href="materia.html">agregala</a></div>
           <!-- <input type="text" id="subject" placeholder="materia"/>-->
-      </div>
       <br>
-      <div class="formBox">
           <label for="date">fecha</label>
           <input type="datetime-local" id="date" placeholder="fecha"/>
-      </div>
-      <br>
-      <div class="formBox">
           <button id="btn">Crear</button>
-      </div>
 
   </form>
-  <a href="docentes.html">Volver</a>
-  <div id="msg">
-    <!-- <pre></pre> -->
-  </div>
+  <div id="vista-div"> </div>
 
-  <div id="msgSave">
-    
-  </div>
+
+  <a href="docentes.html">Volver</a>
+  <br>
+  <div id="msg"> </div>
+  <br>
     <script type="module" src="../src/presenter_tarea.js"></script>
   </body>
 </html>
