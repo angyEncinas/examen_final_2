@@ -1,5 +1,4 @@
 import Tarea from "./tarea.js"
-import Tareas from "./tareas.js"
 
 
 describe("Crear una tarea", () => {
@@ -34,10 +33,4 @@ describe("Guardar tareas", () => {
         expect(listaTareas.guardar(tarea)).toEqual("Tarea Guardada");
     });
 });
-
-/*describe("Guardar una tarea", () => {
-    it("Creara una tarea con detalles simples", () => {
-        expect(tareas.crear('diagramas', 'detalles', 'sis info', '05/2022'))
-    });
-});*/
 

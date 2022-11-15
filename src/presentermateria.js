@@ -18,7 +18,7 @@ crear.addEventListener("submit", (event) => {
   const materia_nombre = materiadada.value;
   const descripcion_text = descripcion.value;
   const docente_text = docente.value;
-  materia.crearMateria(materia_nombre,descripcion_text,docente_text);
+  materia.crearMateria(materia_nombre,docente_text);
   listaMat.push(materia);
   vista.innerHTML = "<p>" + mensaje + "<p>" +
                     "</p>";
