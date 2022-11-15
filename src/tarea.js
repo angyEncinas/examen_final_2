@@ -7,7 +7,7 @@ class Tarea{
     }
 
     mostrar(){
-        return `titulo:${this.titulo}, descripcion:${this.descripcion}, materia:${this.materia}, fecha:${this.fecha} `;
+        return `titulo:${this.titulo}, descripcion:${this.descripcion}, materia:${this.materia}, fecha:${this.fecha}`;
     }
 
     crear(title, desc, mat, date){
