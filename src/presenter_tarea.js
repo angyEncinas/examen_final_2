@@ -1,18 +1,16 @@
 import Tarea from "./tarea.js"
 
-
 const titulo = document.querySelector("#title");
 const desc = document.querySelector("#description");
 const sub = document.querySelector("#subject");
 const date = document.querySelector("#date");
 
-
 const createForm = document.querySelector("#formBox");
-
 const vista = document.querySelector("#vista-div");
+
 let divConfirmacion = document.querySelector("#msg");
 
-let mensaje = "";
+const mensaje = "creada con exito !!!";
 
 let listaTareas = []
 
@@ -26,28 +24,19 @@ createForm.addEventListener("submit", (event) => {
     const subTarea = sub.options[sub.selectedIndex].text;
     const dateTarea = date.value;
 
-
-
-    console.log(titutloTarea, descTarea, subTarea, dateTarea);
-    tarea.crear(titutloTarea, descTarea, subTarea, dateTarea);
+    //console.log(titutloTarea, descTarea, subTarea, dateTarea);
+    tarea.crearTarea(titutloTarea, descTarea, subTarea, dateTarea);
     
     listaTareas.push(tarea);
 
-     mensaje = tarea.crear();
-
+    vista.innerHTML = "<p>" + mensaje + "<p>" +
+                      "</p>";
 
     let listaParaMostrar = "";
-    for(i=0;i<listaTareas.length;i++){
-      listaParaMostrar = listaParaMostrar + "<p>" +  listaTareas[i].mostrar() + "</p>"; 
+    for(i=0;i<listaTareas.length;i++) {
+      listaParaMostrar = listaParaMostrar + listaTareas[i].obtenerTodosLosDatos(); 
     }
 
-    vista.innerHTML = "<p>" + mensaje +  "</p>";
-
     divConfirmacion.innerHTML = listaParaMostrar;
-
-
-
-
 });
   
-
