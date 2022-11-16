@@ -41,3 +41,25 @@ describe("GUARDAR TAREAS", () => {
         expect(tarea.crearTarea('diagramas2', 'detalles2', 'sis info2', '05/20222')).toEqual("Creada con exito!.");
     });
 });
+
+describe("ELIMINAR TAREAS", () => {
+    it("Deberia eliminar el titulo de la tarea", () => {
+        tarea.eliminarMateria();
+        expect(tarea.obtenerNombre()).toEqual("");
+    });
+
+    it("Deberia eliminar la descripcion de la tarea", () => {
+        tarea.eliminarMateria();
+        expect(tarea.obtenerNombre()).toEqual("");
+    });
+
+    it("Deberia eliminar el nombre de la tarea", () => {
+        tarea.eliminarMateria();
+        expect(tarea.obtenerNombre()).toEqual("");
+    });
+
+    it("Deberia eliminar la fecha de la tarea", () => {
+        tarea.eliminarMateria();
+        expect(tarea.obtenerNombre()).toEqual("");
+    });
+});
