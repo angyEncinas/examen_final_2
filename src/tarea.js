@@ -41,6 +41,15 @@ class Tarea{
     mostrarTarea() {
         return `titulo:${this.titulo}, descripcion:${this.descripcion}, materia:${this.materia}, fecha:${this.fecha}`;
     }
+
+    obtenerTodosLosDatos() {
+        let cadenaDatos = "<p> Titulo: " + this.obtenerTitulo() + "<p>" +
+                          "<p> Descripcion: "+ this.obtenerDescripcion() + "<p>" +
+                          "<p> Materia: "+ this.obtenerMateria() + "<p>" +
+                          "<p> Fecha: "+ this.obtenerFecha() + "<p>" +
+                          "</p>";
+        return cadenaDatos;
+    }
 }
 
 export default Tarea

@@ -15,6 +15,7 @@ describe("Crear tarea", () => {
     cy.get("#description").type("Extraer datos de vuelos de aerolineas");
     cy.get("#subject").type("Ing. Software");
     cy.get("#date").type("2017-06-01T08:30");
+    
     // ERRORES A SOLUCIONAR \\
     //cy.get("#crear-button").click();
     //cy.get("#vista-div").should("contain", "creada con exito !!!");

@@ -28,7 +28,7 @@ crear.addEventListener("submit", (event) => {
                     "</p>";
 
   let listaParaMostrar = "";
-  for(i=0;i<listaMat.length;i++){
+  for(i=0;i<listaMat.length;i++) {
     listaParaMostrar = listaParaMostrar + listaMat[i].obtenerTodosLosDatos(); 
   }
   listaMaterias.innerHTML = listaParaMostrar;

@@ -23,7 +23,7 @@ createForm.addEventListener("submit", (event) => {
     const descTarea =desc.value;
     const subTarea = sub.options[sub.selectedIndex].text;
     const dateTarea = date.value;
-    
+
     //console.log(titutloTarea, descTarea, subTarea, dateTarea);
     tarea.crearTarea(titutloTarea, descTarea, subTarea, dateTarea);
     
@@ -32,11 +32,9 @@ createForm.addEventListener("submit", (event) => {
     vista.innerHTML = "<p>" + mensaje + "<p>" +
                       "</p>";
 
-    mensaje = tarea.crearTarea();
-
     let listaParaMostrar = "";
-    for(i=0;i<listaTareas.length;i++){
-      listaParaMostrar = listaParaMostrar + "<p>" +  listaTareas[i].mostrarTarea() + "</p>"; 
+    for(i=0;i<listaTareas.length;i++) {
+      listaParaMostrar = listaParaMostrar + listaTareas[i].obtenerTodosLosDatos(); 
     }
 
     divConfirmacion.innerHTML = listaParaMostrar;
