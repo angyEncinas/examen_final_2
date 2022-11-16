@@ -1,38 +1,38 @@
 import Tarea from "./tarea.js"
-let tareas = new Tarea;
+let tarea = new Tarea;
 
 describe("CREAR UNA TAREA", () => {
     it("Deberia devolver el titulo de la tarea", () => {
-        materia.crearTarea("Proyectos de grados");
-        expect(materia.mostrarTarea()).toEqual("Proyectos de grados");
+        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.obtenerTitulo()).toEqual("Proyectos de grados");
     });
 
     it("Deberia devolver la descripcion de la tarea", () => {
-        materia.crearTarea("Investigar metodologias agiles");
-        expect(materia.mostrarTarea()).toEqual("Investigar metodologias agiles");
+        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.obtenerDescripcion()).toEqual("Investigar metodologias agiles");
     });
 
     it("Deberia devolver el nombre de la materia de la tarea", () => {
-        materia.crearTarea("Taller de desarrollo");
-        expect(materia.mostrarTarea()).toEqual("Taller de desarrollo");
+        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.obtenerMateria()).toEqual("Taller de desarrollo");
     });
 
     it("Deberia devolver la fecha de la tarea", () => {
-        materia.crearTarea("16/11/2022");
-        expect(materia.mostrarTarea()).toEqual("16/11/2022");
+        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.obtenerFecha()).toEqual("16/11/2022");
+    });
+
+    it("Deberia mostrar completamente una tarea con datos ingresados", () => {
+        tarea.crearTarea("Funciones algebraicas", "Resolver los 10 ejercicios", "Calculo I", "01/12/2022");
+        expect(tarea.mostrarTarea()).toEqual("titulo:Funciones algebraicas, descripcion:Resolver los 10 ejercicios, materia:Calculo I, fecha:01/12/2022")
     });
 
     it("Crear una tarea con detalles simples", () => {
-        expect(tareas.crearTarea('diagramas', 'detalles', 'sis info', '05/2022')).toEqual("Creada con exito!.")
-    });
-
-    it("Mostrar una tarea con detalles simples", () => {
-        expect(tareas.mostrarTarea()).toEqual("titulo:diagramas, descripcion:detalles, materia:sis info, fecha:05/2022")
+        expect(tarea.crearTarea('diagramas', 'detalles', 'sis info', '05/08/2022')).toEqual("Creada con exito!.")
     });
 });
 
 describe("GUARDAR TAREAS", () => {
-    let tarea = new Tarea();
     it("Crear una tarea", () => {
         expect(tarea.crearTarea('diagramas', 'detalles', 'sis info', '05/2022')).toEqual("Creada con exito!.");
     });
