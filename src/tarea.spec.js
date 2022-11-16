@@ -32,34 +32,38 @@ describe("CREAR UNA TAREA", () => {
     });
 });
 
-describe("GUARDAR TAREAS", () => {
-    it("Crear una tarea", () => {
+describe("ELIMINAR TAREAS", () => {
+    it("Deberia eliminar el titulo de la tarea", () => {
+        tarea.eliminarTarea();
+        expect(tarea.obtenerTitulo()).toEqual("");
+    });
+
+    it("Deberia eliminar la descripcion de la tarea", () => {
+        tarea.eliminarTarea();
+        expect(tarea.obtenerDescripcion()).toEqual("");
+    });
+
+    it("Deberia eliminar el nombre de la tarea", () => {
+        tarea.eliminarTarea();
+        expect(tarea.obtenerMateria()).toEqual("");
+    });
+
+    it("Deberia eliminar la fecha de la tarea", () => {
+        tarea.eliminarTarea();
+        expect(tarea.obtenerFecha()).toEqual("");
+    });
+});
+
+describe("GENERALIDADES DE TAREAS", () => {
+    it("Confirmacion al crear la tarea", () => {
         expect(tarea.crearTarea('diagramas', 'detalles', 'sis info', '05/2022')).toEqual("Creada con exito!.");
     });
 
     it("Sobreescribir una tarea", () => {
         expect(tarea.crearTarea('diagramas2', 'detalles2', 'sis info2', '05/20222')).toEqual("Creada con exito!.");
     });
-});
 
-describe("ELIMINAR TAREAS", () => {
-    it("Deberia eliminar el titulo de la tarea", () => {
-        tarea.eliminarMateria();
-        expect(tarea.obtenerNombre()).toEqual("");
-    });
-
-    it("Deberia eliminar la descripcion de la tarea", () => {
-        tarea.eliminarMateria();
-        expect(tarea.obtenerNombre()).toEqual("");
-    });
-
-    it("Deberia eliminar el nombre de la tarea", () => {
-        tarea.eliminarMateria();
-        expect(tarea.obtenerNombre()).toEqual("");
-    });
-
-    it("Deberia eliminar la fecha de la tarea", () => {
-        tarea.eliminarMateria();
-        expect(tarea.obtenerNombre()).toEqual("");
+    it("Confirmacion al eliminar la tarea", () => {
+        expect(tarea.eliminarTarea('diagramas', 'detalles', 'sis info', '05/2022')).toEqual("Eliminada con exito!.");
     });
 });
