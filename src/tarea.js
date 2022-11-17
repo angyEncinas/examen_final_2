@@ -4,19 +4,35 @@ class Tarea{
         this.descripcion = "";
         this.materia = "";
         this.fecha = "";
+        this.estado = "pendiente";
+
     }
 
-    mostrar(){
-        return `titulo:${this.titulo}, descripcion:${this.descripcion}, materia:${this.materia}, fecha:${this.fecha} `;
-    }
 
     crear(title, desc, mat, date){
         this.titulo = title;
         this.descripcion = desc;
         this.materia = mat;
         this.fecha = date;
-        return "Creada con exito!.";
     }
+
+    datosToHTML(){
+        let cadenaDatos = "<p> tarea:" + this.titulo + " , " +
+        " descripcion:" + this.materia + " , " +
+        " fecha:" + this.fecha +"</p>";
+        return cadenaDatos;    
+    }
+
+
+/** 
+    isFromSubject(materia)
+    {
+        if (materia == this.materia)
+        {
+            return true;
+        }
+    }
+    */
 }
 
 export default Tarea
