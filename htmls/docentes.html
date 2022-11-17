@@ -8,11 +8,72 @@
 </head>
 <body>
 
-
-
-    <a href="tareas.html">asignar tarea</a>         <a href="">ver reporte de tareas</a>      
+    <a href="#tareas-section">asignar tarea a curso</a>  <a href="#materias-section"> registrar materia </a>       <a href="#reporte-section">ver reporte de tareas</a>      
 
     <a href="../index.html">Volver</a>
+    <section id="materias-section">
+        <h2>asignar tarea</h2>
+          <form id="crear-form">
+            <label>Materia:</label>
+            <input type="string" id="nombre-materia-items" />
+            <br>
+            <label for="doc-item">Docente:</label>
+            <input type="string" id="docente-item" />
+            <br>
+            <input type="submit" value="Crear" id="crear-button" />
+          </form>
+        
+          <div id="vista-div"></div>
+   
+      
+          </section>
+
+<section id="tareas-section">
+
+    <h1><mark>TAREA</mark></h1>
+    <form id  = "formBox">
+          <label for="title">tarea</label>
+          <input type="text" id="title" placeholder="Title"/>
+      <br>
+          <label for="description">descripcion</label>
+          <input type="text" id="description" placeholder="detalle"/>
+      <br>
+          <label for="subject">materia</label>
+          <select name="subject" id="subject">
+          </select>
+          <br><br>
+          <div> no ves la materia de la que eres docente? <a href="materia.html">agregala</a></div>
+      <br>
+          <label for="date">fecha</label>
+          <input type="datetime-local" id="date" placeholder="fecha"/>
+          <button id="btn">Crear</button>
+
+  </form>
+  <div id="vista-div"> </div>
+
+</section>
+
+
+<section id="reporte-section">
+
+    <h2>LISTA DE MATERIAS</h2>
+    <label>Materias:</label>
+      <div id="lista-materias-div"></div> 
+
+
+      <h2>LISTA DE TAREAS</h2>
+      <label>Tareas:</label>
+      <div id="msg"> </div>
+
+
+
+
+</section>
+
+
+<script type="module" src="../src/presenterMateria.js"></script>
+<script type="module" src="../src/presenterTarea.js"></script>
+
 
 </body>
 </html>
