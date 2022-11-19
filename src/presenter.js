@@ -33,7 +33,7 @@ let nuevasMaterias = []
 
 
 const vista = document.querySelector("#vista-div");
-let divConfirmacion = document.querySelector("#msg");
+let divListaTareas = document.querySelector("#lista-tareas");
 
 const mensaje = "se creo la tarea";
 
@@ -96,7 +96,7 @@ createForm.addEventListener("submit", (event) => {
 
     vista.innerHTML = "<p>" + mensaje +  "</p>";
 
-    divConfirmacion.innerHTML = listaDeTareas;
+    divListaTareas.innerHTML = listaDeTareas;
 
 
 
