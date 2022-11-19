@@ -22,7 +22,7 @@ describe("Crear una tarea", () => {
         tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
 
 
-        expect(tarea.getDetalles()).toEqual( "<p> tarea:" + tarea.titulo + " , " +
+        expect(tarea.getDetalles()).toEqual( "<p>" + "tarea:" + tarea.titulo + " , " +
         " descripcion:" + tarea.descripcion + " , " +
         " materia:" + tarea.materia + " , " +
         " fecha:" + tarea.fecha +"</p>"  )
