@@ -4,17 +4,17 @@ describe("CREAR MATERIA", () => {
     
     it("Deberia devolver la sigla de la materia y el nombre", () => {
         materia.crearMateria("LEN-5 Ingles V", "Susan");
-        expect(materia.obtenerNombre()).toEqual("LEN-5 Ingles V");
+        expect(materia.getNombre()).toEqual("LEN-5 Ingles V");
     });
     
     it("Deberia devolver el docente encargado de la materia", () => {
         materia.crearMateria("LEN-5 Ingles V", "Susan");
-        expect(materia.obtenerDocente()).toEqual("Susan");
+        expect(materia.getDocente()).toEqual("Susan");
     });
     it("Deberia mostrar todos los datos de la materia en un formato", () => {
         materia.crearMateria("LEN-5 Ingles V", "Susan");
-        expect(materia.obtenerTodosLosDatos()).toEqual("<p> Materia:" + materia.obtenerNombre() + "<p>" +
-        "<p> Docente:"+ materia.obtenerDocente() + "<p>" +
+        expect(materia.getDetalles()).toEqual("<p> Materia:" + materia.getNombre() + "<p>" +
+        "<p> Docente:"+ materia.getDocente() + "<p>" +
         "</p>");
     });
 });
@@ -22,8 +22,8 @@ describe("CREAR MATERIA", () => {
 describe("MODIFICAR MATERIA", () => {
     it("Deberia eliminar una materia", () => {
         materia.eliminar();
-        expect(materia.obtenerNombre()).toEqual("");
-        expect(materia.obtenerDocente()).toEqual("");
+        expect(materia.getNombre()).toEqual("");
+        expect(materia.getDocente()).toEqual("");
 
     });
 

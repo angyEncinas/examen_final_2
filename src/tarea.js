@@ -8,21 +8,21 @@ class Tarea{
 
     }
 
-    obtenerTitulo(){
+    getTitulo(){
         return this.titulo;
     }
 
-    obtenerDescripcion(){
+    getDescripcion(){
         return this.descripcion;
     }
-    obtenerMateria(){
+    getMateria(){
         return this.materia;
     }
 
-    obtenerFecha(){
+    getFecha(){
         return this.fecha;
     }
-    obtenerEstado(){
+    getEstado(){
         return this.estado;
     }
 
@@ -36,7 +36,7 @@ class Tarea{
 
     }
 
-    datosToHTML(){
+    getDetalles(){
         let cadenaDatos = "<p> tarea:" + this.titulo + " , " +
         " descripcion:" + this.descripcion + " , " +
         " materia:" + this.materia + " , " +

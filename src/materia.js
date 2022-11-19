@@ -1,5 +1,3 @@
-import Tarea from "./tarea.js"
-
 class Materia {
     constructor() {
         this.nombreMateria = "";
@@ -10,17 +8,17 @@ class Materia {
         this.docente = docente;
     }
 
-    obtenerNombre(){
+    getNombre(){
         return this.nombreMateria;
     }
 
-    obtenerDocente(){
+    getDocente(){
         return this.docente;
     }
 
-    obtenerTodosLosDatos(){
-        let cadenaDatos = "<p> Materia:" + this.obtenerNombre() + "<p>" +
-                    "<p> Docente:"+ this.obtenerDocente() + "<p>" +
+    getDetalles(){
+        let cadenaDatos = "<p> Materia:" + this.getNombre() + "<p>" +
+                    "<p> Docente:"+ this.getDocente() + "<p>" +
                     "</p>";
 
         return cadenaDatos;

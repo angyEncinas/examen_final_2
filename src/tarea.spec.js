@@ -9,7 +9,7 @@ describe("Crear una tarea", () => {
         tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
 
 
-        expect(tarea.datosToHTML()).toEqual( "<p> tarea:" + tarea.titulo + " , " +
+        expect(tarea.getDetalles()).toEqual( "<p> tarea:" + tarea.titulo + " , " +
         " descripcion:" + tarea.descripcion + " , " +
         " materia:" + tarea.materia + " , " +
         " fecha:" + tarea.fecha +"</p>"  )
@@ -17,19 +17,19 @@ describe("Crear una tarea", () => {
 
     it("Deberia devolver el titulo de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
-        expect(tarea.obtenerTitulo()).toEqual(tarea.titulo);
+        expect(tarea.getTitulo()).toEqual(tarea.titulo);
     });
     it("Deberia devolver descripcion de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
-        expect(tarea.obtenerDescripcion()).toEqual(tarea.descripcion);
+        expect(tarea.getDescripcion()).toEqual(tarea.descripcion);
     });
     it("Deberia devolver la fecha de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
-        expect(tarea.obtenerFecha()).toEqual(tarea.fecha);
+        expect(tarea.getFecha()).toEqual(tarea.fecha);
     });
     it("Deberia devolver la materia de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
-        expect(tarea.obtenerMateria()).toEqual(tarea.materia);
+        expect(tarea.getMateria()).toEqual(tarea.materia);
     });
 
 
@@ -44,11 +44,11 @@ describe("ELIMINAR tarea", () => {
 
     it("la tarea debe estar eliminada", () => {
         tarea.eliminar();""
-        expect(tarea.obtenerTitulo()).toEqual("");
-        expect(tarea.obtenerDescripcion()).toEqual("");
-        expect(tarea.obtenerEstado()).toEqual("");
-        expect(tarea.obtenerMateria()).toEqual("");
-        expect(tarea.obtenerFecha()).toEqual("");
+        expect(tarea.getTitulo()).toEqual("");
+        expect(tarea.getDescripcion()).toEqual("");
+        expect(tarea.getEstado()).toEqual("");
+        expect(tarea.getMateria()).toEqual("");
+        expect(tarea.getFecha()).toEqual("");
 
 
     });
@@ -56,7 +56,7 @@ describe("ELIMINAR tarea", () => {
     /* 
     it("Deberia modificar la tarea", () => {
         materia.editarTarea();
-        expect(materia.obtenerDocente()).toEqual("");
+        expect(materia.getDocente()).toEqual("");
     });
     */
 });

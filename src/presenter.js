@@ -1,7 +1,6 @@
 import Tarea from "./tarea.js"
 import Materia from "./materia";
-
-//import materias from "./materias.js"
+import materias from "./materias.js"
 
 
 const createForm = document.querySelector("#formBox");
@@ -24,11 +23,11 @@ const crear = document.querySelector("#crear-form");
 const vistaMat = document.querySelector("#vistaMat-div");
 
 const mensajeMat = "creada con exito !!!";
-const divMaterias = document.querySelector("#lista-materias-div");
 
 let nuevasMaterias = []
 
 
+//const divMaterias = document.querySelector("#lista-materias-div"); YA NO ES NECESARIO, TODAS LAS MATERIAS SE VEN EN EL COMBO BOX
 
 
 
@@ -42,6 +41,9 @@ let tareas = []
 
 
 
+for(i=0;i<materias.length;i++){
+  sub.options[i] = new Option(materias[i].nombre + ":" + materias[i].docente,materias[i].nombre);
+}
 
 
 
@@ -54,20 +56,10 @@ crear.addEventListener("submit", (event) => {
   materia.crearMateria(materia_nombre,docente_text);
   nuevasMaterias.push(materia);
 
-  vistaMat.innerHTML = "<p>" + mensajeMat + "<p>" +
-                    "</p>";
-
-  let stringMaterias = "";
-
-  sub.options[sub.options.length] = new Option(materia_nombre,materia_nombre);
+  vistaMat.innerHTML = "<p>" + mensajeMat + "</p>";
 
 
-  for(i=0;i<nuevasMaterias.length;i++){
-    stringMaterias = stringMaterias + nuevasMaterias[i].obtenerTodosLosDatos();
-  }
-  divMaterias.innerHTML = stringMaterias;
-
-
+  sub.options[sub.options.length] = new Option(materia_nombre + ":" + docente_text,materia_nombre);
   
 
                     
@@ -99,7 +91,7 @@ createForm.addEventListener("submit", (event) => {
 
     let listaDeTareas = "";
     for(i=0;i<tareas.length;i++){
-      listaDeTareas = listaDeTareas + "<p>" +  tareas[i].datosToHTML() + "</p>"; 
+      listaDeTareas = listaDeTareas + "<p>" +  tareas[i].getDetalles() + "</p>"; 
     }
 
     vista.innerHTML = "<p>" + mensaje +  "</p>";

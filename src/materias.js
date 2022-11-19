@@ -1,9 +1,13 @@
+/* materias precargadas */
 var materias = [
-   { nombre:"calculo"},
+   { nombre:"Mate Basica",
+     docente:"M. Soruco"},
 
-   { nombre:"calculo2"},
+   { nombre:"Intro a la progra",
+   docente:"C. Sanabria"},
 
-   { nombre:"analisis"}
+   { nombre:"Algebra Lineal",
+      docente:"A. Soruco"}
 ]
 
 export default materias
