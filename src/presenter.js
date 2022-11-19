@@ -91,7 +91,7 @@ createForm.addEventListener("submit", (event) => {
 
     let listaDeTareas = "";
     for(i=0;i<tareas.length;i++){
-      listaDeTareas = listaDeTareas + "<p>" +  tareas[i].getDetalles() + "</p>"; 
+      listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
     }
 
     vista.innerHTML = "<p>" + mensaje +  "</p>";

@@ -37,7 +37,7 @@ class Tarea{
     }
 
     getDetalles(){
-        let cadenaDatos = "<p> tarea:" + this.titulo + " , " +
+        let cadenaDatos = "<p>" + "tarea:" + this.titulo + " , " +
         " descripcion:" + this.descripcion + " , " +
         " materia:" + this.materia + " , " +
         " fecha:" + this.fecha +"</p>";

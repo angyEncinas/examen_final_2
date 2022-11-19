@@ -3,6 +3,4 @@ describe("Cambiar vista de usuario", () => {
     cy.visit('http://localhost:1234/htmls/docentes.html');
     cy.get('#subject').select('Mate Basica:M. Soruco').should('have.value', 'Mate Basica')  });
 
-
-    "Mate Basica:M. Soruco"
 });
