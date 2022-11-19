@@ -3,14 +3,16 @@ let tarea = new Tarea;
 
 describe("CREAR UNA TAREA", () => {
     it("Deberia devolver el titulo de la tarea", () => {
-        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
-        expect(tarea.obtenerTitulo()).toEqual("Proyectos de grados");
+        tarea.crear("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.getTitulo()).toEqual("Proyectos de grados");
     });
 
     it("Deberia devolver la descripcion de la tarea", () => {
-        tarea.crearTarea("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
-        expect(tarea.obtenerDescripcion()).toEqual("Investigar metodologias agiles");
+        tarea.crear("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
+        expect(tarea.getDescripcion()).toEqual("Investigar metodologias agiles");
     });
+});
+
 
 describe("Crear una tarea", () => {
     let tarea = new Tarea;
@@ -41,11 +43,6 @@ describe("Crear una tarea", () => {
     it("Deberia devolver la materia de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
         expect(tarea.getMateria()).toEqual(tarea.materia);
-    });
-
-    it("Deberia mostrar completamente una tarea con datos ingresados", () => {
-        tarea.crearTarea("Funciones algebraicas", "Resolver los 10 ejercicios", "Calculo I", "01/12/2022");
-        expect(tarea.mostrarTarea()).toEqual("titulo:Funciones algebraicas, descripcion:Resolver los 10 ejercicios, materia:Calculo I, fecha:01/12/2022")
     });
 
 
