@@ -13,18 +13,19 @@ describe("CREAR MATERIA", () => {
     });
     it("Deberia mostrar todos los datos de la materia en un formato", () => {
         materia.crearMateria("LEN-5 Ingles V", "Susan");
-        expect(materia. obtenerTodosLosDatos()).toEqual("<p> Materia:LEN-5 Ingles V<p><p> Fecha:Susan<p></p>");
+        expect(materia.obtenerTodosLosDatos()).toEqual("<p> Materia:" + materia.obtenerNombre() + "<p>" +
+        "<p> Docente:"+ materia.obtenerDocente() + "<p>" +
+        "</p>");
     });
 });
 
-describe("ELIMINAR MATERIA", () => {
-    it("Deberia vaciar el nombre de la materia", () => {
-        materia.eliminarMateria();
+describe("MODIFICAR MATERIA", () => {
+    it("Deberia eliminar una materia", () => {
+        materia.eliminar();
         expect(materia.obtenerNombre()).toEqual("");
+        expect(materia.obtenerDocente()).toEqual("");
+
     });
 
-    it("Deberia eliminar  el nombre del docente encargado de la materia", () => {
-        materia.eliminarMateria();
-        expect(materia.obtenerDocente()).toEqual("");
-    });
+
 });

@@ -22,10 +22,15 @@ class Materia {
         let cadenaDatos = "<p> Materia:" + this.obtenerNombre() + "<p>" +
                     "<p> Docente:"+ this.obtenerDocente() + "<p>" +
                     "</p>";
+
         return cadenaDatos;
 
     }
 
+    eliminar(){
+        this.nombreMateria = "";
+        this.docente = "";
+    }
 
 }
 

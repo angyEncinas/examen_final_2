@@ -4,8 +4,26 @@ class Tarea{
         this.descripcion = "";
         this.materia = "";
         this.fecha = "";
-        this.estado = "pendiente";
+        this.estado = "";
 
+    }
+
+    obtenerTitulo(){
+        return this.titulo;
+    }
+
+    obtenerDescripcion(){
+        return this.descripcion;
+    }
+    obtenerMateria(){
+        return this.materia;
+    }
+
+    obtenerFecha(){
+        return this.fecha;
+    }
+    obtenerEstado(){
+        return this.estado;
     }
 
 
@@ -14,15 +32,27 @@ class Tarea{
         this.descripcion = desc;
         this.materia = mat;
         this.fecha = date;
+        this.estado = "pendiente";
+
     }
 
     datosToHTML(){
         let cadenaDatos = "<p> tarea:" + this.titulo + " , " +
-        " descripcion:" + this.materia + " , " +
+        " descripcion:" + this.descripcion + " , " +
+        " materia:" + this.materia + " , " +
         " fecha:" + this.fecha +"</p>";
         return cadenaDatos;    
     }
 
+
+
+    eliminar(){
+        this.titulo = "";
+        this.descripcion = "";
+        this.materia = "";
+        this.fecha = "";
+        this.estado = "";
+    }
 
 /** 
     isFromSubject(materia)
