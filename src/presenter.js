@@ -10,35 +10,28 @@ const desc = document.querySelector("#description");
 const sub = document.querySelector("#subject");
 const date = document.querySelector("#date");
 
+let divListaTareas = document.querySelector("#lista-tareas");
+const vista = document.querySelector("#vista-div");
+const mensaje = "se creo la tarea";
+let tareas = []
 
 
 
-
-
-const materiadada = document.querySelector("#nombre-materia-items");
-const docente = document.querySelector("#docente-item");
 
 const crear = document.querySelector("#crear-form");
 
+const materiadada = document.querySelector("#nombre-materia-items");
+const docente = document.querySelector("#docente-item");
 const vistaMat = document.querySelector("#vistaMat-div");
-
 const mensajeMat = "creada con exito !!!";
-
 let nuevasMaterias = []
-
 
 //const divMaterias = document.querySelector("#lista-materias-div"); YA NO ES NECESARIO, TODAS LAS MATERIAS SE VEN EN EL COMBO BOX
 
+const sortBySub = document.querySelector("#sort-by-sub-btn");
+const sortByDate = document.querySelector("#sort-by-date-btn");
 
-
-
-const vista = document.querySelector("#vista-div");
-let divListaTareas = document.querySelector("#lista-tareas");
-
-const mensaje = "se creo la tarea";
-
-let tareas = []
-
+let listaDeTareas = "";
 
 
 for(i=0;i<materias.length;i++){
@@ -85,20 +78,40 @@ createForm.addEventListener("submit", (event) => {
     tarea.crear(tituloTarea, descTarea, subTarea, dateTarea);
     tareas.push(tarea);
 
-    console.log(tarea);
+    //console.log(tarea);
     
 
 
-    let listaDeTareas = "";
+    listaDeTareas = "";
     for(i=0;i<tareas.length;i++){
       listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
     }
 
     vista.innerHTML = "<p>" + mensaje +  "</p>";
-
     divListaTareas.innerHTML = listaDeTareas;
+});
+
+sortByDate.addEventListener("click", (event) => {
+  event.preventDefault();
+  tareas.sort((a,b)=> (a.fecha < b.fecha ? 1 : -1))
+  listaDeTareas = "";
+  for(i=0;i<tareas.length;i++){
+    listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
+  }
+
+  divListaTareas.innerHTML = listaDeTareas;
+
+});
 
 
+sortBySub.addEventListener("click", (event) => {
+  event.preventDefault();
+  tareas.sort((a,b)=> (a.materia < b.materia ? 1 : -1))
+  listaDeTareas = "";
+  for(i=0;i<tareas.length;i++){
+    listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
+  }
 
+  divListaTareas.innerHTML = listaDeTareas;
 
 });
