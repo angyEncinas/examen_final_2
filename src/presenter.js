@@ -27,6 +27,7 @@ const mensajeMat = "creada con exito !!!";
 let nuevasMaterias = []
 
 //const divMaterias = document.querySelector("#lista-materias-div"); YA NO ES NECESARIO, TODAS LAS MATERIAS SE VEN EN EL COMBO BOX
+const report = document.querySelector("#report-btn");
 
 const sortBySub = document.querySelector("#sort-by-sub-btn");
 const sortByDate = document.querySelector("#sort-by-date-btn");
@@ -77,6 +78,7 @@ createForm.addEventListener("submit", (event) => {
 
     tarea.crear(tituloTarea, descTarea, subTarea, dateTarea);
     tareas.push(tarea);
+    vista.innerHTML = "<p>" + mensaje +  "</p>";
 
     //console.log(tarea);
     
@@ -86,14 +88,13 @@ createForm.addEventListener("submit", (event) => {
     for(i=0;i<tareas.length;i++){
       listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
     }
-
-    vista.innerHTML = "<p>" + mensaje +  "</p>";
     divListaTareas.innerHTML = listaDeTareas;
+
 });
 
 sortByDate.addEventListener("click", (event) => {
   event.preventDefault();
-  tareas.sort((a,b)=> (a.fecha < b.fecha ? 1 : -1))
+  tareas.sort((a,b)=> (a.fecha > b.fecha ? 1 : -1))
   listaDeTareas = "";
   for(i=0;i<tareas.length;i++){
     listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
@@ -106,7 +107,7 @@ sortByDate.addEventListener("click", (event) => {
 
 sortBySub.addEventListener("click", (event) => {
   event.preventDefault();
-  tareas.sort((a,b)=> (a.materia < b.materia ? 1 : -1))
+  tareas.sort((a,b)=> (a.materia > b.materia ? 1 : -1))
   listaDeTareas = "";
   for(i=0;i<tareas.length;i++){
     listaDeTareas = listaDeTareas + tareas[i].getDetalles(); 
