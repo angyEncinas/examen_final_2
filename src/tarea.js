@@ -44,6 +44,12 @@ class Tarea{
         return cadenaDatos;    
     }
 
+    getDetallesBrief(){
+        let cadenaDatos = "<p>" + "tarea:" + this.titulo + " , " +
+        "materia:" + this.materia + "</p>";
+        return cadenaDatos;    
+    }
+
 
 
     eliminar(){
@@ -54,15 +60,15 @@ class Tarea{
         this.estado = "";
     }
 
-/** 
-    isFromSubject(materia)
+
+    isInSubjectList(materias)
     {
-        if (materia == this.materia)
+        if (materias.includes(this.materia) )
         {
             return true;
         }
     }
-    */
+
 }
 
 export default Tarea

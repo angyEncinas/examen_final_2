@@ -28,6 +28,16 @@ describe("Crear una tarea", () => {
         " fecha:" + tarea.fecha +"</p>"  )
     });
 
+
+    it("mostrara los datos basicos de una tarea", () => {
+        tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
+
+
+        expect(tarea.getDetallesBrief()).toEqual( "<p>" + "tarea:" + tarea.titulo + " , " +
+        "materia:" + tarea.materia + "</p>"  )
+    });
+
+
     it("Deberia devolver el titulo de la tarea", () => {
         tarea.crear('practica', 'ejercicios', 'calculo', '05/2022');
         expect(tarea.getTitulo()).toEqual(tarea.titulo);
