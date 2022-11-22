@@ -4,7 +4,9 @@ class Tarea{
         this.descripcion = "";
         this.materia = "";
         this.fecha = "";
-        this.estado = "";
+        this.estudiantes;
+      //  this.estimacion ;
+
 
     }
 
@@ -22,9 +24,6 @@ class Tarea{
     getFecha(){
         return this.fecha;
     }
-    getEstado(){
-        return this.estado;
-    }
 
 
     crear(title, desc, mat, date){
@@ -32,8 +31,13 @@ class Tarea{
         this.descripcion = desc;
         this.materia = mat;
         this.fecha = date;
-        this.estado = "pendiente";
+        this.estudiantes = 0;
 
+    }
+
+    setStudent()
+    {
+        this.estudiantes++;
     }
 
     getDetalles(){
@@ -46,9 +50,10 @@ class Tarea{
 
     getDetallesBrief(){
         let cadenaDatos = "<p>" + "tarea:" + this.titulo + " , " +
-        "materia:" + this.materia + "</p>";
+        "materia:" + this.materia + "(" + this.estudiantes + ")" + "</p>";
         return cadenaDatos;    
     }
+
 
 
 
@@ -57,17 +62,11 @@ class Tarea{
         this.descripcion = "";
         this.materia = "";
         this.fecha = "";
-        this.estado = "";
+        this.estudiantes = 0;
     }
 
 
-    isInSubjectList(materias)
-    {
-        if (materias.includes(this.materia) )
-        {
-            return true;
-        }
-    }
+
 
 }
 

@@ -31,7 +31,7 @@ const sortBySub = document.querySelector("#sort-by-sub-btn");
 const sortByDate = document.querySelector("#sort-by-date-btn");
 
 let listaDeTareas = "";
-let listaFechas = [];
+let listaFechas = new Set();
 let students = estudiantes;
 
 
@@ -71,7 +71,7 @@ createForm.addEventListener("submit", (event) => {
 
   tarea.crear(tituloTarea, descTarea, subTarea, dateTarea);
   tareas.push(tarea);
-  listaFechas.push(dateTarea);
+  listaFechas.add(dateTarea);
   vista.innerHTML = "<p>" + mensaje + "</p>";
 
   //console.log(listaFechas);
@@ -108,24 +108,41 @@ sortBySub.addEventListener("click", (event) => {
 
 reportBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  //console.log(students)
+
+
   let reporteTareas = "";
 
-  let studentCounter = 0;
 
+// vemos cuantos estudiantes tienen cada tarea
   for (i = 0; i < tareas.length; i++) 
   {
-    studentCounter= 0;
     for (j = 0; j < students.length; j++){ 
     
       if (students[j].materias.includes(tareas[i].materia)){
-        studentCounter++;
-        console.log(tareas[i].materia , students[j].materias)
+       // studentCounter++;
+        tareas[i].setStudent()
+       // console.log(tareas[i].materia , students[j].materias)
       }
     }
-    reporteTareas = reporteTareas + tareas[i].getDetallesBrief() + "(" + studentCounter.toString() + ")";
+  }
+
+
+  //mostraamos las tareas en cada fecha
+  
+for (const x of listaFechas.values()) {
+  reporteTareas = reporteTareas + x;
+    for (j = 0; j < tareas.length; j++) {
+      if(tareas[j].fecha == x){
+        reporteTareas = reporteTareas + tareas[j].getDetallesBrief();
+       console.log(x, tareas[j])
+      }
+
+
+    }
   }
   report.innerHTML = reporteTareas;
+
+
 
 
 });
