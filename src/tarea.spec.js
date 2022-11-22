@@ -29,12 +29,12 @@ describe("Crear una tarea", () => {
     });
 
 
-    it("mostrara los datos basicos de una tarea", () => {
+    it("mostrara los datos basicos de una tarea para el reporte", () => {
         tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
 
 
         expect(tarea.getDetallesBrief()).toEqual( "<p>" + "tarea:" + tarea.titulo + " , " +
-        "materia:" + tarea.materia + "</p>"  )
+        "materia:" + tarea.materia + "("+tarea.estudiantes+")"+ "</p>"  )
     });
 
 
@@ -65,20 +65,31 @@ describe("ELIMINAR tarea", () => {
     tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
 
     it("la tarea debe estar eliminada", () => {
-        tarea.eliminar();""
+        tarea.eliminar();
         expect(tarea.getTitulo()).toEqual("");
         expect(tarea.getDescripcion()).toEqual("");
-        expect(tarea.getEstado()).toEqual("");
+        expect(tarea.getStudents()).toEqual(0);
         expect(tarea.getMateria()).toEqual("");
         expect(tarea.getFecha()).toEqual("");
-
-
     });
 
-    /* 
-    it("Deberia modificar la tarea", () => {
-        materia.editarTarea();
-        expect(materia.getDocente()).toEqual("");
-    });
-    */
+
+
 });
+
+    describe("modificar tareas", () => {
+        let tarea = new Tarea;
+        tarea.crear('ejercicio', 'diagramas', 'sis info', '05/2022');
+    
+        it("se deben aiumentar los estudiantes que tienen la tarea", () => {
+            tarea.setStudent();
+            tarea.setStudent();
+
+            expect(tarea.getStudents()).toEqual(2);
+
+    
+        });
+
+
+
+    });

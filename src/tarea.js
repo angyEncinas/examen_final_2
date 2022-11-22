@@ -35,6 +35,11 @@ class Tarea{
 
     }
 
+    getStudents(){
+        return this.estudiantes;
+
+    }
+
     setStudent()
     {
         this.estudiantes++;
