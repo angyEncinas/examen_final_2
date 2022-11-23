@@ -2,18 +2,25 @@ import Tarea from "./tarea.js";
 import Materia from "./materia";
 import materias from "./materias.js";
 import estudiantes from "./estudiantes.js";
-
+import buscar  from "./operations.js";
 
 const createForm = document.querySelector("#formBox");
+const buscarForm = document.querySelector("#buscador-form");
+
 
 const titulo = document.querySelector("#title");
 const desc = document.querySelector("#description");
 const sub = document.querySelector("#subject");
 const date = document.querySelector("#date");
+const tareaBuscada = document.querySelector("#buscar-tarea");
+
 
 let divListaTareas = document.querySelector("#lista-tareas");
 const vista = document.querySelector("#vista-div");
-const mensaje = "se creo la tarea";
+const divBusqueda = document.querySelector("#encontrado-div");
+const btnEliminar = document.querySelector("#eliminar-button");
+
+
 let tareas = [];
 
 const crear = document.querySelector("#crear-form");
@@ -21,7 +28,6 @@ const crear = document.querySelector("#crear-form");
 const materiadada = document.querySelector("#nombre-materia-items");
 const docente = document.querySelector("#docente-item");
 const vistaMat = document.querySelector("#vistaMat-div");
-const mensajeMat = "creada con exito !!!";
 let nuevasMaterias = [];
 
 //const divMaterias = document.querySelector("#lista-materias-div"); YA NO ES NECESARIO, TODAS LAS MATERIAS SE VEN EN EL COMBO BOX
@@ -43,20 +49,30 @@ for (i = 0; i < materias.length; i++) {
 }
 
 crear.addEventListener("submit", (event) => {
+
   event.preventDefault();
   const materia_nombre = materiadada.value;
   const docente_text = docente.value;
 
   let materia = new Materia();
-  materia.crearMateria(materia_nombre, docente_text);
-  nuevasMaterias.push(materia);
+  let checkMateria = materia.crearMateria(materia_nombre, docente_text);
 
-  vistaMat.innerHTML = "<p>" + mensajeMat + "</p>";
+  if(checkMateria == true)
+  {
+    nuevasMaterias.push(materia);
 
-  sub.options[sub.options.length] = new Option(
-    materia_nombre + ":" + docente_text,
-    materia_nombre
-  );
+    vistaMat.innerHTML = "<p> creada con exito !! </p>";
+
+    sub.options[sub.options.length] = new Option(
+      materia_nombre + ":" + docente_text,
+      materia_nombre
+    );
+  }
+
+  else{
+    vistaMat.innerHTML = "<p> No se pudo crear la materia</p>";
+  }
+
 });
 
 createForm.addEventListener("submit", (event) => {
@@ -69,18 +85,38 @@ createForm.addEventListener("submit", (event) => {
   const subTarea = sub.options[sub.selectedIndex].text;
   const dateTarea = date.value;
 
-  tarea.crear(tituloTarea, descTarea, subTarea, dateTarea);
-  tareas.push(tarea);
-  listaFechas.add(dateTarea);
-  vista.innerHTML = "<p>" + mensaje + "</p>";
-
-  //console.log(listaFechas);
-
-  listaDeTareas = "";
-  for (i = 0; i < tareas.length; i++) {
-    listaDeTareas = listaDeTareas + tareas[i].getDetalles();
+  let check = tarea.crear(tituloTarea, descTarea, subTarea, dateTarea);
+  
+  if(check == true)
+  {
+    tareas.push(tarea);
+    listaFechas.add(dateTarea);
+    vista.innerHTML = "<p> se creo la tarea </p>";
+  
+    //console.log(listaFechas);
+  
+    listaDeTareas = "";
+    for (i = 0; i < tareas.length; i++) {
+      listaDeTareas = listaDeTareas + tareas[i].getDetalles();
+    }
+    divListaTareas.innerHTML = listaDeTareas;
   }
-  divListaTareas.innerHTML = listaDeTareas;
+  else{
+    vista.innerHTML = "<p> No se creo la tarea </p>";
+
+  }
+});
+
+
+buscarForm.addEventListener("submit", (event) => {
+  event.preventDefault();   
+
+  const search = tareaBuscada.value;  
+  const tareaEncontrada = buscar(listaDeTareas, search); 
+
+  divBusqueda.innerHTML = "<p>" + "Tarea: " + tareaEncontrada.titulo + "<p>" + "Descripcion: " + tareaEncontrada.descripcion + 
+                          "<p>" + "Materia: " + tareaEncontrada.materia + "<p>" + "Fecha: " + tareaEncontrada.fecha +
+                          "</p>";
 });
 
 sortByDate.addEventListener("click", (event) => {

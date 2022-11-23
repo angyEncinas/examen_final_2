@@ -5,10 +5,13 @@ class Materia {
     }
 
     crearMateria(siglaynombre,docente) {
+        if(siglaynombre == "" || docente ==""){
+            return false
+        }
         this.nombreMateria = siglaynombre;
         this.docente = docente;
+        return true;
     }
-
     getNombre(){
         return this.nombreMateria;
     }
