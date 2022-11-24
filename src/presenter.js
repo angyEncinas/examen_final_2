@@ -60,7 +60,7 @@ crear.addEventListener("submit", (event) => {
   {
     nuevasMaterias.push(materia);
 
-    vistaMat.innerHTML = "<p> creada con exito !! </p>";
+    vistaMat.innerHTML = "<p> creada con exito !!! </p>";
 
     sub.options[sub.options.length] = new Option(
       materia_nombre + ":" + docente_text,
