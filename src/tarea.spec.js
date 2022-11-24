@@ -11,6 +11,10 @@ describe("CREAR UNA TAREA", () => {
         tarea.crear("Proyectos de grados", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022");
         expect(tarea.getDescripcion()).toEqual("Investigar metodologias agiles");
     });
+
+    it("devuelve falso si existe un campo vacio", () => {
+        expect(tarea.crear("", "Investigar metodologias agiles", "Taller de desarrollo", "16/11/2022")).toEqual(false);
+    });
 });
 
 

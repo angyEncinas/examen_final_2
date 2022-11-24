@@ -18,6 +18,10 @@ describe("CREAR MATERIA", () => {
         "<p> Docente:"+ materia.getDocente() + "<p>" +
         "</p>");
     });
+
+    it("devuelve falso si existe un campo vacio", () => {
+        expect(materia.crearMateria("", "mgr molina")).toEqual(false);
+    });
 });
 
 describe("MODIFICAR MATERIA", () => {

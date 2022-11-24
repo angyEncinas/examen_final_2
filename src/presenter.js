@@ -2,7 +2,6 @@ import Tarea from "./tarea.js";
 import Materia from "./materia";
 import materias from "./materias.js";
 import estudiantes from "./estudiantes.js";
-import buscar  from "./operations.js";
 
 const createForm = document.querySelector("#formBox");
 const buscarForm = document.querySelector("#buscador-form");
@@ -107,16 +106,21 @@ createForm.addEventListener("submit", (event) => {
   }
 });
 
+let tareaEncontrada = "";
 
 buscarForm.addEventListener("submit", (event) => {
   event.preventDefault();   
+  const search = tareaBuscada.value; 
 
-  const search = tareaBuscada.value;  
-  const tareaEncontrada = buscar(listaDeTareas, search); 
+  for(let i = 0;i<tareas.length;i++){
+    if(tareas[i].titulo==search){
+      tareaEncontrada = tareaEncontrada + tareas[i].getDetallesBrief();
+    }
+}
+divBusqueda.innerHTML =   tareaEncontrada;
 
-  divBusqueda.innerHTML = "<p>" + "Tarea: " + tareaEncontrada.titulo + "<p>" + "Descripcion: " + tareaEncontrada.descripcion + 
-                          "<p>" + "Materia: " + tareaEncontrada.materia + "<p>" + "Fecha: " + tareaEncontrada.fecha +
-                          "</p>";
+
+
 });
 
 sortByDate.addEventListener("click", (event) => {
@@ -182,3 +186,6 @@ for (const x of listaFechas.values()) {
 
 
 });
+
+
+

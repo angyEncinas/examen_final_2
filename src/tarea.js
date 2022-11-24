@@ -67,7 +67,6 @@ class Tarea{
 
 
 
-
     eliminar(){
         this.titulo = "";
         this.descripcion = "";
