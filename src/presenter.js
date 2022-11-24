@@ -123,6 +123,8 @@ divBusqueda.innerHTML =   tareaEncontrada;
 
 });
 
+
+
 sortByDate.addEventListener("click", (event) => {
   event.preventDefault();
   tareas.sort((a, b) => (a.fecha > b.fecha ? 1 : -1));
