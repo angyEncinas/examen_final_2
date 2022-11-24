@@ -6,7 +6,7 @@ describe("Cambiar de Paginas", () => {
 
   it("Deberia cambiar a la pagina de docentes para Registrar una Tarea al hacer click en el boton Ingresar", () => {
     cy.visit('http://localhost:1234/htmls/docentes.html');
-    cy.get("#tareas-section").should("contain", "Registrar Tarea");
+    cy.get("#tareas-section").should("contain", "no ves la materia de la que eres docente?");
   });
 
   it("Deberia cambiar a la pagina de docentes para Buscar una Tarea al hacer click en el boton Ingresar", () => {
